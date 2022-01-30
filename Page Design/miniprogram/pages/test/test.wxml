@@ -1,0 +1,124 @@
+<!--pages/test/test.wxml-->
+<!-- view组件 -->
+<view class="box">
+  <view class="title">
+    <text>view组件</text>
+  </view>
+  <view class="container1">
+    <view>A</view>
+    <view>B</view>
+    <view>C</view>
+  </view>
+</view>
+
+<!-- scroll-view组件 scroll-x" -->
+<!-- 无法实现 -->
+<view class="box">
+  <view class="title">
+    <text>scroll-view组件 scroll-x </text>
+    <text style="color:red">无法实现</text>
+  </view>
+  <scroll-view class="sc1" scroll-x="true">
+    <view>A</view>
+    <view>B</view>
+    <view>C</view>
+  </scroll-view>
+</view>
+
+<!-- scroll-view组件 scroll-y" -->
+<!-- 无法实现 -->
+<view class="box">
+  <view class="title">
+    <text>scroll-view组件 scroll-y</text>
+  </view>
+  <scroll-view class="sc2" scroll-y="true">
+    <view>A</view>
+    <view>B</view>
+    <view>C</view>
+  </scroll-view>
+</view>
+
+<!-- swiper组件 -->
+<view class="box">
+  <view class="title">
+    <text>swiper组件</text>
+  </view>
+  <swiper class="sw1" indicator-dots="true" autoplay="ture" interval="2000" previous-margin="10px" next-margin="10px" circular="ture">
+    <swiper-item>
+      <view class="item">A</view>
+    </swiper-item>
+    <swiper-item>
+      <view class="item">B</view>
+    </swiper-item>
+    <swiper-item>
+      <view class="item">C</view>
+    </swiper-item>
+  </swiper>
+</view>
+
+<!-- text组件 -->
+<view class="box">
+  <view class="title">
+    <text>text组件</text>
+  </view>
+  <view>text组件：
+    <text>这是一个text标签</text>
+  </view>
+  <view>
+    <text>rich-text组件：</text>
+    <rich-text nodes="<h3 style='color:green'>这是一个rich-text标签</h3>"></rich-text>
+  </view>
+</view>
+
+<!-- button组件 -->
+<view class="box">
+  <view class="title">
+    <text>button组件</text>
+  </view>
+  <button>普通按钮</button>
+  <button type="primary">主色调按钮</button>
+  <button type="warn">警告按钮</button>
+  <button size="mini">普通按钮</button>
+  <button type="primary" size="mini">主色调按钮</button>
+  <button type="warn" size="mini">警告按钮</button>
+  <button plain>普通按钮</button>
+  <button type="primary" plain>主色调按钮</button>
+  <button type="warn" plain>警告按钮</button>
+</view>
+
+<!-- image组件 -->
+<view class="box">
+  <view class="title">
+    <text>image组件</text>
+  </view>
+  <image></image>
+  <image src="/image/头像.jpg"></image>
+</view>
+
+<!-- 数据绑定 -->
+<view class="box">
+  <view class="title">
+    <text>数据绑定 mustache语法(插值表达式)</text>
+  </view>
+  <text>{{info}}\n</text>
+  <image src="{{src}}"></image>
+  <text>\n</text>
+  <text>{{randomNum >= 5 ? '随机数大于等于5' : '随机数小于5'}}{{'('+randomNum+')'}}\n</text>
+  <text>{{randomNumFix >= 5 ? '随机数大于等于5' : '随机数小于5'}}{{'('+randomNumFix+')'}}</text>
+</view>
+
+<!-- tap事件 -->
+<view class="box">
+  <view class="title">
+    <text>tap事件</text>
+  </view>
+  <!-- bindtap当用户点击该组件的时候会在该页面对应的Page中找到相应的事件处理函数 -->
+  <text>绑定事件</text>
+  <button type="primary" bindtap="lg" id="test">测试</button>
+  <text>赋值</text>
+  <button type="primary" bindtap="countadd">+{{count}}</button>
+  <text>事件传参: \n data-*自定义属性传参，其中*代表的是参数的名字</text>
+  <button type="primary" bindtap="lg" data-info="{{2}}">事件传参</button>
+  <text>\n</text>
+  <button type="primary" bindtap="countadd2" data-info="{{2}}">+{{count2}}</button>
+</view>

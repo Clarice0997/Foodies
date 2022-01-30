@@ -1,0 +1,124 @@
+/* pages/test/test.wxss */
+.box {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.title {
+  font-weight: bold;
+  color: cornflowerblue;
+}
+
+/* view组件 */
+.container1 {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.container1 view {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+}
+
+.container1 view:nth-child(1) {
+  background-color: lightcoral;
+}
+
+.container1 view:nth-child(2) {
+  background-color: lightcyan;
+}
+
+.container1 view:nth-child(3) {
+  background-color: lightgreen;
+}
+
+/* scroll-x组件 */
+.sc1 {
+  height: 100px;
+  width: 100px;
+  margin: auto;
+  border: 1px solid royalblue;
+}
+
+.sc1 view {
+  height: 100px;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  display: inline-block;
+}
+
+.sc1 view:nth-child(1) {
+  background-color: lightcoral;
+}
+
+.sc1 view:nth-child(2) {
+  background-color: lightcyan;
+}
+
+.sc1 view:nth-child(3) {
+  background-color: lightgreen;
+}
+
+/* scroll-y组件 */
+.sc2 {
+  height: 100px;
+  width: 100px;
+  margin: auto;
+  border: 1px solid royalblue;
+}
+
+.sc2 view {
+  height: 100px;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  display: inline-block;
+}
+
+.sc2 view:nth-child(1) {
+  background-color: lightcoral;
+}
+
+.sc2 view:nth-child(2) {
+  background-color: lightcyan;
+}
+
+.sc2 view:nth-child(3) {
+  background-color: lightgreen;
+}
+
+/* swiper组件 */
+.sw1 {
+  height: 100px;
+}
+
+.sw1 view {
+  height: 100%;
+  line-height: 100px;
+  text-align: center;
+}
+
+swiper-item:nth-child(1) .item {
+  background-color: lightcoral;
+}
+
+swiper-item:nth-child(2) .item {
+  background-color: lightcyan;
+}
+
+swiper-item:nth-child(3) .item {
+  background-color: lightgreen;
+}
+
+/* image组件 */
+image{
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  border: 1px solid lightgreen;
+}

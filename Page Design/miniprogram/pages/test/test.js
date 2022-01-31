@@ -10,7 +10,25 @@ Page({
     randomNum: Math.random() * 10,
     randomNumFix: Math.random().toFixed(2) * 10,
     count: 1,
-    count2: 2
+    count2: 2,
+    msg: '你好',
+    condition: 'false',
+    type: '1',
+    block: '0',
+    arr1: ["苹果", "草莓", "梨"],
+    List1: [{
+        id: 1,
+        name: '小红'
+      },
+      {
+        id: 2,
+        name: '小白'
+      },
+      {
+        id: 3,
+        name: '小黄'
+      }
+    ]
   },
 
   /**
@@ -37,10 +55,91 @@ Page({
   },
 
   /**
+   * 定义文本框输入事件
+   */
+  inputHandler(e) {
+    // e.detail.value变化后文本框最新数据
+    console.log(e.detail.value)
+  },
+
+  /**
+   * 数据绑定
+   */
+  iptHandler(e) {
+    this.setData({
+      msg: e.detail.value
+    })
+  },
+
+  /**
+   * block显示与隐藏
+   */
+  blockHandler() {
+    if (this.data.block == 0) {
+      this.setData({
+        block: this.data.block = 1
+      })
+    } else {
+      this.setData({
+        block: this.data.block = 0
+      })
+    }
+  },
+
+  /**
+   * Get请求
+   */
+  getInfo(){
+    wx.request({
+      url: 'https://www.escook.cn/api/get',
+      data: {
+        name:'rp',
+        age:20
+      },
+      header: {'content-type':'application/json'},
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: (result)=>{
+        console.log(result);
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
+  },
+
+  /**
+   * Post请求
+   */
+   postInfo(){
+    wx.request({
+      url: 'https://www.escook.cn/api/post',
+      data: {
+        name:'rp',
+        age:20
+      },
+      header: {'content-type':'application/json'},
+      method: 'POST',
+      dataType: 'json',
+      responseType: 'text',
+      success: (result)=>{
+        console.log(result);
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
+  },  
+
+
+  
+
+
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getInfo()
+    this.postInfo()
   },
 
   /**

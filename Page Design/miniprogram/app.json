@@ -1,14 +1,45 @@
 {
   "pages": [
+    "pages/Home/Home",
     "pages/test/test",
     "pages/index/index",
     "pages/logs/logs"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#2b4b6b",
     "navigationBarTitleText": "客中行",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#efefef",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 50
+  },
+  "tabBar": {
+    "color": "",
+    "selectedColor": "",
+    "backgroundColor": "",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/Home/Home",
+        "text": "首页",
+        "iconPath": "image/tabImg01.png",
+        "selectedIconPath":"image/tabImg01.png"
+      },
+      {
+        "pagePath": "pages/test/test",
+        "text": "测试",
+        "iconPath": "image/tabImg02.png",
+        "selectedIconPath":"image/tabImg02.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "日志",
+        "iconPath": "image/tabImg03.png",
+        "selectedIconPath":"image/tabImg03.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",

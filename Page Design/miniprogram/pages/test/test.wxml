@@ -1,4 +1,4 @@
-<!--pages/test/test.wxml-->
+<!-- pages/test/test.wxml -->
 <!-- view组件 -->
 <view class="box">
   <view class="title">
@@ -10,12 +10,11 @@
     <view>C</view>
   </view>
 </view>
-
 <!-- scroll-view组件 scroll-x" -->
 <!-- 无法实现 -->
 <view class="box">
   <view class="title">
-    <text>scroll-view组件 scroll-x </text>
+    <text>scroll-view组件 scroll-x</text>
     <text style="color:red">无法实现</text>
   </view>
   <scroll-view class="sc1" scroll-x="true">
@@ -24,7 +23,6 @@
     <view>C</view>
   </scroll-view>
 </view>
-
 <!-- scroll-view组件 scroll-y" -->
 <!-- 无法实现 -->
 <view class="box">
@@ -37,7 +35,6 @@
     <view>C</view>
   </scroll-view>
 </view>
-
 <!-- swiper组件 -->
 <view class="box">
   <view class="title">
@@ -55,13 +52,13 @@
     </swiper-item>
   </swiper>
 </view>
-
 <!-- text组件 -->
 <view class="box">
   <view class="title">
     <text>text组件</text>
   </view>
-  <view>text组件：
+  <view>
+    text组件：
     <text>这是一个text标签</text>
   </view>
   <view>
@@ -69,7 +66,6 @@
     <rich-text nodes="<h3 style='color:green'>这是一个rich-text标签</h3>"></rich-text>
   </view>
 </view>
-
 <!-- button组件 -->
 <view class="box">
   <view class="title">
@@ -85,7 +81,6 @@
   <button type="primary" plain>主色调按钮</button>
   <button type="warn" plain>警告按钮</button>
 </view>
-
 <!-- image组件 -->
 <view class="box">
   <view class="title">
@@ -94,7 +89,6 @@
   <image></image>
   <image src="/image/头像.jpg"></image>
 </view>
-
 <!-- 数据绑定 -->
 <view class="box">
   <view class="title">
@@ -106,7 +100,6 @@
   <text>{{randomNum >= 5 ? '随机数大于等于5' : '随机数小于5'}}{{'('+randomNum+')'}}\n</text>
   <text>{{randomNumFix >= 5 ? '随机数大于等于5' : '随机数小于5'}}{{'('+randomNumFix+')'}}</text>
 </view>
-
 <!-- tap事件 -->
 <view class="box">
   <view class="title">
@@ -119,6 +112,94 @@
   <button type="primary" bindtap="countadd">+{{count}}</button>
   <text>事件传参: \n data-*自定义属性传参，其中*代表的是参数的名字</text>
   <button type="primary" bindtap="lg" data-info="{{2}}">事件传参</button>
-  <text>\n</text>
+  <text>绑定事件和传参不能同时进行\n</text>
   <button type="primary" bindtap="countadd2" data-info="{{2}}">+{{count2}}</button>
+</view>
+<!-- input事件 -->
+<view class="box">
+  <view class="title">
+    <text>input事件</text>
+  </view>
+  <input bindinput="inputHandler"></input>
+</view>
+<!-- 数据绑定 -->
+<view class="box">
+  <view class="title">
+    <text>数据绑定</text>
+  </view>
+  <input value="{{msg}}" bindinput="iptHandler"></input>
+  <text>{{msg}}</text>
+</view>
+<!-- 条件渲染 -->
+<view class="box">
+  <view class="title">
+    <text>条件渲染</text>
+    <text>\n1.wx:if;wx:elif;wx:else\n2.block\n3.hidden</text>
+  </view>
+  <view wx:if="{{type == 1}}">A</view>
+  <view wx:elif="{{type == 2}}">B</view>
+  <view wx:else>C</view>
+  <view class="title">
+    <text>block标签用于包装一系列需要隐藏显示的组件\n</text>
+  </view>
+  <block wx:if="{{block == 1}}">
+    <view style="width:100px;height:100px;background:lightgreen;margin:auto"></view>
+  </block>
+  <button type="warn" bindtap="blockHandler">显示隐藏内容</button>
+</view>
+<!-- 列表渲染 -->
+<view class="box">
+  <view class="title">
+    <text>列表渲染 wx:for</text>
+  </view>
+  <view wx:for="{{arr1}}" wx:key="index">这是索引：{{index}}，item项是：{{item}}</view>
+  <view class="title">
+    <text>列表渲染 wx:for-index wx:for-item \n无key会报warning(可用index)</text>
+  </view>
+  <view wx:for="{{arr1}}" wx:for-index="idx" wx:for-item="itemName" wx:key="index">
+    这是索引：{{idx}}，item项是：{{itemName}}
+  </view>
+  <view class="title">
+    <text>列表渲染 wx:key （提高渲染效率）</text>
+  </view>
+  <view wx:for="{{List1}}" wx:key="id">{{item.name}}</view>
+</view>
+<!-- wxss rpx单位 -->
+<view class="box">
+  <view class="title">
+    <text>wxss rpx单位</text>
+  </view>
+  <text>rpx将屏幕宽度等分为750份(750rpx)\n</text>
+  <text>在不同设备上运行，rpx会自动换算成对应的px，从而实现屏幕适配</text>
+</view>
+<!-- 公共样式表 -->
+<view class="box">
+  <view class="title">
+    <text>公共样式</text>
+  </view>
+  <text class="common">测试\n</text>
+  <text selectable="false" space="false" decode="false">测试</text>
+</view>
+<!-- tabBar -->
+<view class="box" hover-class="none" hover-stop-propagation="false">
+  <view class="title">
+    <text>tabBar节点</text>
+  </view>
+  <text selectable="false" space="false" decode="false">
+    tabBar最少配置2个，最多配置5个tab页签\n顶部渲染tabBar不显示icon只显示文本\n
+  </text>
+  <view class="title">
+    <text>tabBar的6个组成部分</text>
+  </view>
+  <text class="" selectable="false" space="false" decode="false">
+    1.backgroundColor\n2.selectedIconPath\n3.selectedColor\n4.borderStyle\n5.iconPath\n6.color\n
+  </text>
+</view>
+<!-- GET和POST -->
+<view class="box" hover-class="none" hover-stop-propagation="false">
+  <view class="title">
+    <text>GET和POST</text>
+  </view>
+  <button type="primary" bindtap="getInfo">GET请求</button>
+  <button type="warn" bindtap="postInfo">POST请求</button>
 </view>

@@ -1,4 +1,6 @@
 /* pages/test/test.wxss */
+@import "/common/common.wxss";
+
 .box {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -42,6 +44,7 @@
   width: 100px;
   margin: auto;
   border: 1px solid royalblue;
+  padding: 0;
 }
 
 .sc1 view {
@@ -50,6 +53,8 @@
   line-height: 100px;
   text-align: center;
   display: inline-block;
+  padding: 0;
+  margin: 0;
 }
 
 .sc1 view:nth-child(1) {
@@ -78,6 +83,8 @@
   line-height: 100px;
   text-align: center;
   display: inline-block;
+  padding: 0;
+  margin: 0;
 }
 
 .sc2 view:nth-child(1) {
@@ -121,4 +128,12 @@ image{
   height: 200px;
   margin: auto;
   border: 1px solid lightgreen;
+}
+
+/* input组件 */
+input{
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 3px;
 }

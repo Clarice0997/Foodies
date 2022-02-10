@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-
     <router-view/>
   </div>
 </template>
@@ -15,5 +14,8 @@
   height: 100%;
   padding: 0px;
   margin: 0px;
+}
+body{
+  margin: 0;
 }
 </style>

@@ -33,19 +33,17 @@
     <!-- 页头 -->
     <!-- <el-page-header @back="goBack" content="详情页面"></el-page-header> -->
     <el-row>
-      <div class="lunbotu">
-        <el-carousel :interval="4000"  trigger="click" height="350px">
+        <el-carousel :interval="4000" type="card" trigger="click" height="350px">
           <el-carousel-item v-for="item in 6" :key="item">
             <h3 class="medium">{{ item }}</h3>
           </el-carousel-item>
         </el-carousel>
-      </div>
     </el-row>
     
-    <el-row :gutter="24" >
+    <el-row :gutter="0" >
       <div class="input">
-        <el-col :span="22"><el-input  placeholder="请输入内容" v-model="input" clearable></el-input></el-col>
-        <el-col :span="2"><el-button  type="primary" >搜索</el-button></el-col>
+        <el-col :span="8" :offset="7"><el-input  placeholder="请输入您所想要的店铺名" v-model="input" clearable></el-input></el-col>
+        <el-col :span="2" :offset="0"><el-button type="primary" icon="el-icon-search">搜索</el-button></el-col>
       </div>
     </el-row>
     
@@ -79,18 +77,14 @@ export default {
     margin: 10px 50px 10px 10px;
     float: right;
 }
-  .lunbotu{
-    float: left;
-    width: 100%;
-    border: brown solid 3px;
-    z-index:-1;
-  }
   .input{
-    float: left;
-    border: rgb(46, 165, 42) solid 3px;
-    margin-top: -150px;
-    margin-left: 35%;
-    z-index: 999;
+    /* float: left; */
+    /* border: rgb(46, 165, 42) solid 3px; */
+    position: relative;
+    bottom: 250px;
+    margin: 0 auto;
+    z-index: 2;
+    
   }
   .el-carousel__item h3 {
     color: #475669;
